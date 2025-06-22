@@ -27,6 +27,62 @@
       color: inherit;
     }
 
+    /* ナビゲーションバー固定 */
+    .nav-wrapper {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .nav a {
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: transform 0.3s, color 0.3s, border-bottom 0.3s;
+    }
+
+    .nav a:hover {
+      color: #ffd700;
+      transform: scale(1.1);
+    }
+
+    .nav a.active {
+      color: #ffd700;
+      border-bottom: 2px solid #ffd700;
+    }
+
+    /* ヒーローセクション */
+    .hero {
+      background: url('2482ca0fe7e27fbb.webp') no-repeat center center / cover;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      padding-top: 80px; /* ナビの高さ分 */
+    }
+
+    .hero-title {
+      color: #fff;
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      margin-bottom: 40px;
+      animation: fadeInUp 1.2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
     /* アニメーション */
     .slide-in {
       opacity: 0;
@@ -48,61 +104,6 @@
         opacity: 1;
         transform: translateY(0);
       }
-    }
-
-    /* ヒーローセクション */
-    .hero {
-      background: url('2482ca0fe7e27fbb.webp') no-repeat center center / cover;
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      position: relative;
-    }
-
-    .nav-wrapper {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px 0;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      padding: 12px 24px;
-      border-radius: 30px;
-    }
-
-    .nav a {
-      color: #fff;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: transform 0.3s, color 0.3s, border-bottom 0.3s;
-    }
-
-    .nav a:hover {
-      color: #ffd700;
-      transform: scale(1.1);
-    }
-
-    .nav a.active {
-      color: #ffd700;
-      border-bottom: 2px solid #ffd700;
-    }
-
-    .hero-title {
-      color: #fff;
-      font-size: 3rem;
-      text-align: center;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-      margin-bottom: 40px;
-      animation: fadeInUp 1.2s ease-out forwards;
-      opacity: 0;
-      transform: translateY(30px);
     }
 
     /* メイン */
@@ -144,11 +145,11 @@
     @media (max-width: 768px) {
       .hero {
         height: 50vh;
+        padding-top: 70px;
       }
 
       .nav {
         gap: 15px;
-        padding: 10px 16px;
       }
 
       .hero-title {
@@ -173,6 +174,7 @@
     @media (max-width: 480px) {
       .hero {
         height: 45vh;
+        padding-top: 60px;
       }
 
       .nav {
@@ -197,15 +199,17 @@
 </head>
 <body>
 
+  <!-- ナビゲーションを最上部に配置 -->
+  <div class="nav-wrapper">
+    <nav class="nav">
+      <a href="#about">神日京国とは</a>
+      <a href="#regions">各県</a>
+      <a href="#server">サーバー</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+
   <div class="hero">
-    <div class="nav-wrapper">
-      <nav class="nav">
-        <a href="#about">神日京国とは</a>
-        <a href="#regions">各県</a>
-        <a href="#server">サーバー</a>
-        <a href="#contact">お問い合わせ</a>
-      </nav>
-    </div>
     <div class="hero-title"></div>
   </div>
 
@@ -242,7 +246,6 @@
     const onScroll = () => {
       const scrollY = window.scrollY;
 
-      // スライド表示
       slideEls.forEach(el => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
@@ -250,9 +253,8 @@
         }
       });
 
-      // 現在位置ナビハイライト
       document.querySelectorAll("section").forEach(section => {
-        const top = section.offsetTop - 200;
+        const top = section.offsetTop - 300;
         const bottom = top + section.offsetHeight;
         const id = section.getAttribute("id");
 
