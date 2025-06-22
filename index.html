@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>神日京国HP</title>
+  <title>神日京国</title>
   <style>
+    /* ===== リセット & ベース ===== */
     * {
       margin: 0;
       padding: 0;
@@ -12,63 +13,65 @@
     }
     html, body {
       font-family: 'Yu Gothic', sans-serif;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+      background: #f9f9f9;
+      color: #333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
+    /* ===== ヘッダー（ビジュアル） ===== */
     .hero {
-      background: url('2482ca0fe7e27fbb.webp') no-repeat center center;
+      background: url('your-image.jpg') no-repeat center center;
       background-size: cover;
       height: 60vh;
-      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      position: relative;
     }
 
-    nav {
+    .nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 40px;
       background: rgba(0, 0, 0, 0.5);
-      padding: 10px 20px;
+      padding: 15px 30px;
       border-radius: 30px;
       position: absolute;
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
-      white-space: nowrap;
-      overflow-x: auto;
+      z-index: 10;
+      flex-wrap: wrap;
     }
 
-    nav a {
+    .nav a {
       color: #fff;
-      text-decoration: none;
       font-weight: bold;
       font-size: 1rem;
-      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+    .nav a:hover {
+      color: #ffd700;
     }
 
-    header {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+    .hero-title {
       color: #fff;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-      font-size: 2.5em;
+      font-size: 3rem;
       text-align: center;
-      padding: 0 10px;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
     }
 
+    /* ===== メインコンテンツ ===== */
     main {
-      flex: 1;
-      max-width: 900px;
-      margin: -60px auto 40px;
+      max-width: 960px;
+      margin: -50px auto 60px;
       background: #fff;
+      padding: 40px 30px;
       border-radius: 12px;
-      padding: 30px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
@@ -77,62 +80,71 @@
     }
 
     h2 {
+      font-size: 1.8rem;
       margin-bottom: 20px;
-      color: #333;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-      font-size: 1.5em;
+      border-left: 5px solid #ccc;
+      padding-left: 10px;
     }
 
     p {
-      margin-bottom: 16px;
-      line-height: 1.7;
-      color: #555;
-      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
     }
 
+    /* ===== フッター ===== */
     footer {
       background: #222;
-      color: #ddd;
+      color: #ccc;
       text-align: center;
       padding: 20px;
-      font-size: 0.9em;
+      font-size: 0.9rem;
     }
 
-    /* レスポンシブ調整 */
+    /* ===== レスポンシブ対応 ===== */
     @media (max-width: 768px) {
-      header {
-        font-size: 2em;
-        padding: 0 10px;
+      .hero-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+      }
+
+      .nav {
+        gap: 20px;
+        padding: 10px 20px;
       }
 
       main {
         margin: -40px 16px 40px;
-        padding: 20px;
+        padding: 30px 20px;
       }
 
       h2 {
-        font-size: 1.3em;
-      }
-
-      p {
-        font-size: 0.95rem;
+        font-size: 1.5rem;
       }
     }
 
     @media (max-width: 480px) {
-      header {
-        font-size: 1.6em;
+      .hero {
+        height: 50vh;
       }
 
-      nav {
-        gap: 14px;
-        padding: 8px 12px;
+      .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
         font-size: 0.9rem;
       }
 
-      nav a {
-        font-size: 0.9rem;
+      .hero-title {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -140,43 +152,39 @@
 <body>
 
   <div class="hero">
-    <nav>
-      <a href="#about">神日京国</a>
-      <a href="#rooms">国について</a>
-      <a href="#onsen">サーバー</a>
-      <a href="#access">各県</a>
+    <nav class="nav">
+      <a href="#about">神日京国とは</a>
+      <a href="#regions">各県</a>
+      <a href="#server">サーバー</a>
+      <a href="#contact">お問い合わせ</a>
     </nav>
-    <header>神日京国へようこそ</header>
+    <div class="hero-title">神日京国へようこそ</div>
   </div>
 
   <main>
     <section id="about">
-      <h2>サイトについて</h2>
-      <p></p>
-      <p></p>
+      <h2>神日京国とは</h2>
+      <p>（ここに紹介文を入力）</p>
     </section>
 
-    <section id="rooms">
-      <h2>国について</h2>
-      <p></p>
-      <p></p>
-    </section>
-
-    <section id="onsen">
-      <h2>サーバー</h2>
-      <p></p>
-      <p></p>
-    </section>
-
-    <section id="access">
+    <section id="regions">
       <h2>各県</h2>
-      <p></p>
-      <p></p>
+      <p>（ここに地域や組織情報を入力）</p>
+    </section>
+
+    <section id="server">
+      <h2>サーバー</h2>
+      <p>（ここに技術環境やサポート情報などを入力）</p>
+    </section>
+
+    <section id="contact">
+      <h2>お問い合わせ</h2>
+      <p>（ここに連絡方法やフォームへのリンクなどを記載）</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 神日京国公式</p>
+    &copy; 2025 神日京国公式サイト
   </footer>
 
 </body>
