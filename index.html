@@ -28,7 +28,7 @@
       color: inherit;
     }
 
-    /* ナビゲーションバー固定 */
+    /* ナビゲーションバー */
     .nav-wrapper {
       position: fixed;
       top: 0;
@@ -49,7 +49,7 @@
       color: #fff;
       font-weight: bold;
       font-size: 1rem;
-      transition: transform 0.3s, color 0.3s, border-bottom 0.3s;
+      transition: transform 0.3s, color 0.3s;
     }
 
     .nav a:hover {
@@ -57,56 +57,32 @@
       transform: scale(1.1);
     }
 
-    .nav a.active {
-      color: #ffd700;
-    }
-
     /* ヒーローセクション */
     .hero {
       background: url('39_20250622223803.webp') no-repeat center center / cover;
-      height: 60vh;
-      padding-top: 140px;  /* 80px → 140px に変更 */
+      min-height: 60vh;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      position: relative;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 20px 60px;
+      text-align: center;
     }
 
     .hero-title {
       color: #fff;
       font-size: 3rem;
-      text-align: center;
       text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-      margin-bottom: 40px;
       animation: fadeInUp 1.2s ease-out forwards;
       opacity: 0;
       transform: translateY(30px);
     }
 
-    /* アニメーション */
-    .slide-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .slide-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* メイン */
+    /* メインコンテンツ */
     main {
       max-width: 960px;
       margin: 60px auto;
@@ -141,20 +117,31 @@
       font-size: 0.9rem;
     }
 
-    /* レスポンシブ */
+    /* アニメーション表示 */
+    .slide-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .slide-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* レスポンシブ対応 */
     @media (max-width: 768px) {
       .hero {
-        height: 50vh;
-        padding-top: 70px;
-      }
-
-      .nav {
-        gap: 15px;
+        min-height: 50vh;
+        padding: 80px 20px 40px;
       }
 
       .hero-title {
         font-size: 2rem;
-        margin-bottom: 30px;
+      }
+
+      .nav {
+        gap: 15px;
       }
 
       main {
@@ -173,18 +160,17 @@
 
     @media (max-width: 480px) {
       .hero {
-        height: 45vh;
-        padding-top: 60px;
+        min-height: 45vh;
+        padding: 70px 16px 30px;
+      }
+
+      .hero-title {
+        font-size: 1.6rem;
       }
 
       .nav {
         gap: 10px;
         font-size: 0.85rem;
-      }
-
-      .hero-title {
-        font-size: 1.6rem;
-        margin-bottom: 20px;
       }
 
       h2 {
@@ -199,80 +185,66 @@
 </head>
 <body>
 
-  <!-- ナビゲーションを最上部に配置 -->
+  <!-- ナビゲーション -->
   <div class="nav-wrapper">
     <nav class="nav">
-  <a href="about.html">神日京国とは</a>
-  <a href="regions.html">各県</a>
-  <a href="server.html">サーバー</a>
-  <a href="contact.html">お問い合わせ</a>
-</nav>
+      <a href="about.html">神日京国とは</a>
+      <a href="regions.html">各県</a>
+      <a href="server.html">サーバー</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
   </div>
 
+  <!-- ヒーロー画像 -->
   <div class="hero">
-    <div class="hero-title"></div>
   </div>
 
+  <!-- メイン -->
   <main>
-    <section id="about" class="slide-in">
+    <section class="slide-in">
       <h2>神日京国とは</h2>
       <p>（ここに紹介文を入力）</p>
     </section>
 
-    <section id="regions" class="slide-in">
+    <section class="slide-in">
       <h2>各県</h2>
       <p>（ここに地域や組織情報を入力）</p>
     </section>
 
-    <section id="server" class="slide-in">
+    <section class="slide-in">
       <h2>サーバー</h2>
       <p>（ここに技術環境やサポート情報などを入力）</p>
     </section>
 
-    <section id="contact" class="slide-in">
+    <section class="slide-in">
       <h2>お問い合わせ</h2>
       <p>（ここに連絡方法やフォームへのリンクなどを記載）</p>
     </section>
   </main>
 
+  <!-- フッター -->
   <footer>
     &copy; 2025 神日京国公式サイト
   </footer>
 
+  <!-- JavaScript：アニメーション -->
   <script>
     const slideEls = document.querySelectorAll('.slide-in');
-    const navLinks = document.querySelectorAll('.nav a');
 
     const onScroll = () => {
-      const scrollY = window.scrollY;
-
       slideEls.forEach(el => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
           el.classList.add('visible');
         }
       });
-
-      document.querySelectorAll("section").forEach(section => {
-        const top = section.offsetTop - 300;
-        const bottom = top + section.offsetHeight;
-        const id = section.getAttribute("id");
-
-        if (scrollY >= top && scrollY < bottom) {
-          navLinks.forEach(link => link.classList.remove("active"));
-          document.querySelector(`.nav a[href="#${id}"]`)?.classList.add("active");
-        }
-      });
     };
 
     window.addEventListener('scroll', onScroll);
-  window.addEventListener('load', () => {
-    // 遅延で実行しても初期スクロール位置が維持されない場合の対策
-    setTimeout(() => {
-      window.scrollTo(0, 0); // ← 最上部へ強制スクロール
-    }, 10);
-    onScroll();
-  });
+    window.addEventListener('load', () => {
+      setTimeout(() => window.scrollTo(0, 0), 10);
+      onScroll();
+    });
   </script>
 
 </body>
