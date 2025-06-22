@@ -2,87 +2,83 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>神日京国HP</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body, html { height:100%; font-family:'Yu Gothic',sans-serif; display:flex; flex-direction:column; }
 
-    html, body {
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-    }
-
-    body {
-      background: linear-gradient(to bottom, 
-        rgba(0, 0, 0, 0.7), 
-        rgba(255, 255, 255, 0.9) 50%), 
-        url('background.jpg') no-repeat center center;
+    /* 全画面上部ビジュアル */
+    .hero {
+      background: url('2482ca0fe7e27fbb.webp') no-repeat center center;
       background-size: cover;
-      color: #333;
+      height: 60vh;
+      position: relative;
     }
+    /* ナビゲーションエリア */
+    nav {
+      position: absolute;
+      top: 20px; left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      background: rgba(0,0,0,0.5);
+      padding: 10px 20px;
+      border-radius: 30px;
+    }
+    nav a { color: #fff; text-decoration: none; font-weight: bold; }
 
     header {
-      width: 100%;
-      padding: 30px 20px;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      bottom: 20px; left: 50%;
+      transform: translateX(-50%);
       color: #fff;
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1 {
-      font-size: 2.8em;
-      letter-spacing: 2px;
+      text-shadow:0 2px 4px rgba(0,0,0,0.7);
+      font-size: 3em;
+      font-weight: bold;
     }
 
     main {
-      flex: 1;
-      max-width: 800px;
-      margin: 40px auto;
+      flex:1;
+      max-width: 900px;
+      margin: -60px auto 40px;
       background: #fff;
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 30px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
+    main h2 { margin-bottom: 20px; color:#333; }
+    main p { margin-bottom: 16px; line-height:1.7; color:#555; }
 
     footer {
-      width: 100%;
-      padding: 20px;
+      background: #222;
+      color: #ddd;
       text-align: center;
-      background-color: #222;
-      color: #fff;
-    }
-
-    p {
-      font-size: 1.1em;
-      line-height: 1.8;
+      padding: 20px;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
 
-  <!-- ヘッダー -->
-  <header>
-    <h1>神日京国へようこそ</h1>
-  </header>
+  <div class="hero">
+    <nav>
+      <a href="#about">旅館について</a>
+      <a href="#rooms">客室</a>
+      <a href="#onsen">温泉</a>
+      <a href="#access">交通・アクセス</a>
+    </nav>
+    <header>神日京国へようこそ</header>
+  </div>
 
-  <!-- メインコンテンツ -->
-  <main>
-    <p>こちらは神日京国の公式ホームページです。</p>
-    <p>やっほ〜</p>
+  <main id="about">
+    <h2>旅館について</h2>
+    <p>琵琶湖を望む高級旅館、神日京国（仮称）。伝統とモダンが融合したおもてなしをお楽しみください。</p>
+    <p>旬の京会席料理、多彩な温泉、露天風呂付き客室をご用意しています。</p>
   </main>
 
-  <!-- フッター -->
   <footer>
-    <p>&copy; 2025 神日京国公式サイト</p>
+    <p>&copy; 2025 神日京国公式</p>
   </footer>
 
 </body>
