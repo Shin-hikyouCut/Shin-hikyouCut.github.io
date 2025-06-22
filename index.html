@@ -1,101 +1,166 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SecureBot – あなたのサーバーをいつでも安心に</title>
-<style>
-  /* 基本リセット */
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: 'Segoe UI', sans-serif; line-height:1.6; color:#333; background:#f9f9f9; }
-  a { text-decoration:none; color:#0066cc; }
-  header, footer, section { padding:20px; max-width:1000px; margin:0 auto; }
-  header { background:#fff; border-bottom:1px solid #ddd; display:flex; justify-content:space-between; align-items:center; }
-  header nav a { margin:0 10px; font-weight:600; }
-  .btn-primary { background:#0066cc; color:#fff; padding:10px 20px; border:none; border-radius:4px; cursor:pointer; transition:background .2s; }
-  .btn-primary:hover { background:#005bb5; }
-  .hero { text-align:center; padding:80px 20px; background:#e6f0ff; }
-  .hero h1 { font-size:2.5rem; margin-bottom:20px; }
-  .stats { display:flex; justify-content:center; gap:40px; margin:40px 0; }
-  .stats .item { text-align:center; }
-  .stats .item .num { font-size:2rem; font-weight:700; color:#0066cc; }
-  .features { background:#fff; padding:40px 20px; }
-  .features h2 { text-align:center; margin-bottom:30px; }
-  .features .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-  .features .card { background:#f1f5fa; padding:20px; border-radius:6px; }
-  .features .card h3 { margin-bottom:10px; color:#0066cc; }
-  .cta { background:#fff; text-align:center; padding:60px 20px; }
-  footer { background:#fff; border-top:1px solid #ddd; text-align:center; font-size:0.9rem; }
-  footer nav a { margin:0 5px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>マイホームページ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header nav a {
+      color: #fff;
+      margin-left: 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hero {
+      background: #e0efff;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .hero button {
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+    .service {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      flex: 1;
+      min-width: 250px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact-form button {
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <div class="logo"><strong>SecureBot</strong></div>
+  <div><strong>MyWebsite</strong></div>
   <nav>
-    <a href="#">ホーム</a>
-    <a href="#status">ステータス</a>
-    <a href="#terms">利用規約</a>
-    <a href="#privacy">プライバシー</a>
+    <a href="#services">サービス</a>
+    <a href="#about">私たちについて</a>
+    <a href="#contact">お問い合わせ</a>
   </nav>
-  <button class="btn-primary" onclick="goDashboard()">Botを導入 / ダッシュボード</button>
 </header>
 
 <section class="hero">
-  <h1>あなたのサーバーをいつでも安心に</h1>
-  <button class="btn-primary" onclick="goDashboard()">今すぐ導入</button>
+  <h1>ようこそ、マイホームページへ</h1>
+  <p>ここではあなたのサービスや商品を紹介できます。</p>
+  <button onclick="scrollToContact()">お問い合わせ</button>
 </section>
 
-<section class="stats">
-  <div class="item"><div class="num" id="servers">0</div><p>導入サーバー数</p></div>
-  <div class="item"><div class="num" id="users">0</div><p>保護ユーザー数</p></div>
-  <div class="item"><div class="num" id="blocks">0</div><p>防止スパム数</p></div>
-</section>
-
-<section class="features">
-  <h2>SecureBotの特徴</h2>
-  <div class="grid">
-    <div class="card"><h3>独自認証システム</h3><p>危険ユーザーを自動判定し、安全に排除します。</p></div>
-    <div class="card"><h3>セキュリティ重視</h3><p>多層防御により、サーバーを強固に保護。</p></div>
-    <div class="card"><h3>安心サポート</h3><p>複数スタッフによる迅速な対応体制。</p></div>
+<section id="services" class="section">
+  <h2>サービス紹介</h2>
+  <div class="services">
+    <div class="service">
+      <h3>ウェブ制作</h3>
+      <p>モダンでレスポンシブなウェブサイトを作成します。</p>
+    </div>
+    <div class="service">
+      <h3>SEO対策</h3>
+      <p>検索エンジンに強いサイト設計を提供します。</p>
+    </div>
+    <div class="service">
+      <h3>運用サポート</h3>
+      <p>サイト公開後も安心の継続サポートを提供。</p>
+    </div>
   </div>
 </section>
 
-<section class="cta">
-  <h2>今すぐ始めましょう</h2>
-  <button class="btn-primary" onclick="goDashboard()">導入 / ログイン</button>
+<section id="about" class="section" style="background:#ffffff;">
+  <h2>私たちについて</h2>
+  <p style="max-width: 700px; margin: auto; text-align: center;">
+    私たちは中小企業や個人事業主向けに、丁寧で信頼性のあるウェブソリューションを提供しています。
+    クライアントの目標を第一に考え、長くお付き合いできるパートナーでありたいと願っています。
+  </p>
+</section>
+
+<section id="contact" class="section">
+  <h2>お問い合わせ</h2>
+  <form class="contact-form" onsubmit="handleSubmit(event)">
+    <input type="text" placeholder="お名前" required>
+    <input type="email" placeholder="メールアドレス" required>
+    <textarea rows="5" placeholder="お問い合わせ内容" required></textarea>
+    <button type="submit">送信</button>
+  </form>
 </section>
 
 <footer>
-  <p>© 2025 SecureBot. All Rights Reserved.</p>
-  <nav>
-    <a href="#terms">利用規約</a> |
-    <a href="#privacy">プライバシーポリシー</a>
-  </nav>
+  © 2025 MyWebsite. All rights reserved.
 </footer>
 
 <script>
-  /* サンプルのカウンターアニメーション */
-  const stats = { servers: 837, users: 193855, blocks: 150000 };
-  Object.keys(stats).forEach(key => {
-    let el = document.getElementById(key);
-    let count = 0;
-    const target = stats[key];
-    const increment = Math.ceil(target / 100);
-    const interval = setInterval(() => {
-      count += increment;
-      if (count >= target) {
-        el.textContent = target.toLocaleString();
-        clearInterval(interval);
-      } else {
-        el.textContent = count.toLocaleString();
-      }
-    }, 20);
-  });
+  function scrollToContact() {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  }
 
-  function goDashboard() {
-    window.location.href = "https://dashboard.example.com";
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert("お問い合わせありがとうございます。後ほどご連絡いたします。");
+    event.target.reset();
   }
 </script>
 
