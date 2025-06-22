@@ -11,6 +11,7 @@
       background: #f4f6fa;
       color: #333;
     }
+
     header {
       background: #2c3e50;
       color: white;
@@ -19,34 +20,34 @@
       justify-content: space-between;
       align-items: center;
     }
+
     header nav a {
       color: white;
       margin-left: 15px;
       text-decoration: none;
     }
 
-    .hero {
-      height: 50vh;
-      background: url('https://media.discordapp.net/attachments/1385647827224625325/1386477074415616121/39_20250623074355.png?ex=6859d8e6&is=68588766&hm=32620aba1a053a184eab4156b5b0f55586160dbc220d0831264dc590880f30dd&=&format=webp&quality=lossless&width=1634&height=918') center/cover no-repeat;
-      background-attachment: fixed;
+    /* トップ画像 */
+    .top-image img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .hero-text {
       text-align: center;
       padding: 60px 20px;
-      background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+      background: white;
     }
 
     .hero-text h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-bottom: 20px;
-      color: #2c3e50;
     }
 
     .hero-text p {
       font-size: 1.2rem;
       margin-bottom: 30px;
-      color: #444;
     }
 
     .hero-text button {
@@ -127,10 +128,12 @@
   </nav>
 </header>
 
-<!-- 背景画像だけのセクション -->
-<section class="hero"></section>
+<!-- トップ画像 -->
+<div class="top-image">
+  <img src="https://media.discordapp.net/attachments/1385647827224625325/1386477074415616121/39_20250623074355.png?ex=6859d8e6&is=68588766&hm=32620aba1a053a184eab4156b5b0f55586160dbc220d0831264dc590880f30dd&=&format=webp&quality=lossless&width=1634&height=918" alt="神日京国のイメージ画像">
+</div>
 
-<!-- テキスト専用セクション -->
+<!-- ヒーローテキスト -->
 <section class="hero-text">
   <h1>神日京国へようこそ</h1>
   <p>個性豊かなメンバーと過ごす、にぎやかで楽しいDiscordサーバー</p>
