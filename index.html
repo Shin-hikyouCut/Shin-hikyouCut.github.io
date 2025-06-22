@@ -63,15 +63,20 @@
       transform: scale(1.1);
     }
 
+    .nav a.active {
+      color: #ffd700;
+    }
+
     /* ヒーローセクション */
     .hero {
       background: url('39_20250622223803.webp') no-repeat center center / cover;
-      min-height: 60vh;
+      height: 60vh;
+      min-height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 100px 20px 60px;
       text-align: center;
+      padding: 100px 20px 60px;
     }
 
     .hero-title {
@@ -88,7 +93,6 @@
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* メインコンテンツ */
     main {
       max-width: 960px;
       margin: 60px auto;
@@ -114,7 +118,6 @@
       margin-bottom: 20px;
     }
 
-    /* フッター */
     footer {
       background: #222;
       color: #ccc;
@@ -123,7 +126,6 @@
       font-size: 0.9rem;
     }
 
-    /* アニメーション表示 */
     .slide-in {
       opacity: 0;
       transform: translateY(30px);
@@ -135,10 +137,9 @@
       transform: translateY(0);
     }
 
-    /* レスポンシブ対応 */
     @media (max-width: 768px) {
       .hero {
-        min-height: 50vh;
+        height: 50vh;
         padding: 80px 20px 40px;
       }
 
@@ -166,7 +167,7 @@
 
     @media (max-width: 480px) {
       .hero {
-        min-height: 45vh;
+        height: 45vh;
         padding: 70px 16px 30px;
       }
 
@@ -194,54 +195,69 @@
   <!-- ナビゲーション -->
   <div class="nav-wrapper">
     <nav class="nav">
-      <a href="about.html">神日京国とは</a>
-      <a href="regions.html">各県</a>
-      <a href="server.html">サーバー</a>
-      <a href="contact.html">お問い合わせ</a>
+      <a href="#about">神日京国とは</a>
+      <a href="#regions">各県</a>
+      <a href="#server">サーバー</a>
+      <a href="#contact">お問い合わせ</a>
     </nav>
   </div>
 
-  <!-- ヒーロー画像 -->
+  <!-- ヒーロー -->
   <div class="hero">
+    <div class="hero-title">ようこそ神日京国へ</div>
   </div>
 
   <!-- メイン -->
   <main>
-    <section class="slide-in">
+    <section id="about" class="slide-in">
       <h2>神日京国とは</h2>
       <p>（ここに紹介文を入力）</p>
     </section>
 
-    <section class="slide-in">
+    <section id="regions" class="slide-in">
       <h2>各県</h2>
       <p>（ここに地域や組織情報を入力）</p>
     </section>
 
-    <section class="slide-in">
+    <section id="server" class="slide-in">
       <h2>サーバー</h2>
       <p>（ここに技術環境やサポート情報などを入力）</p>
     </section>
 
-    <section class="slide-in">
+    <section id="contact" class="slide-in">
       <h2>お問い合わせ</h2>
       <p>（ここに連絡方法やフォームへのリンクなどを記載）</p>
     </section>
   </main>
 
-  <!-- フッター -->
   <footer>
     &copy; 2025 神日京国公式サイト
   </footer>
 
-  <!-- JavaScript：アニメーション -->
   <script>
     const slideEls = document.querySelectorAll('.slide-in');
+    const navLinks = document.querySelectorAll('.nav a');
 
     const onScroll = () => {
+      const scrollY = window.scrollY;
+
       slideEls.forEach(el => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight - 100) {
           el.classList.add('visible');
+        }
+      });
+
+      // ナビゲーションの active クラス切替
+      document.querySelectorAll('section').forEach(section => {
+        const top = section.offsetTop - 300;
+        const bottom = top + section.offsetHeight;
+        const id = section.getAttribute('id');
+
+        if (scrollY >= top && scrollY < bottom) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`.nav a[href="#${id}"]`);
+          if (activeLink) activeLink.classList.add('active');
         }
       });
     };
