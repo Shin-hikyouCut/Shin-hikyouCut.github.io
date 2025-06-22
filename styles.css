@@ -1,1 +1,39 @@
+/* 全体の背景画像を設定 */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-image: url('2482ca0fe7e27fbb.webp'); /* 背景画像のパス */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+/* ヘッダーのスタイル */
+header {
+  background-color: rgba(0, 0, 0, 0.5); /* 透過黒背景で文字を読みやすく */
+  padding: 40px 0;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+/* メイン部分 */
+main {
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4); /* 本文読みやすさ調整 */
+  margin: 40px auto;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+/* フッター */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
