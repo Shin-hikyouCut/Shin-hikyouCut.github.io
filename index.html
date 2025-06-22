@@ -3,91 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>マイホームページ</title>
+  <title>神日京国 - Discordサーバー公式サイト</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
+      background: #f4f6fa;
       color: #333;
     }
     header {
-      background: #004080;
-      color: #fff;
+      background: #2c3e50;
+      color: white;
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     header nav a {
-      color: #fff;
+      color: white;
       margin-left: 15px;
       text-decoration: none;
-      font-weight: 500;
     }
     .hero {
-      background: #e0efff;
+      background: linear-gradient(to right, #3a539b, #2c3e50);
+      color: white;
       padding: 80px 20px;
       text-align: center;
     }
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
     }
     .hero button {
-      background: #004080;
+      background: #f39c12;
       color: white;
-      border: none;
       padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
-      border-radius: 5px;
     }
     .section {
-      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
+      padding: 60px 20px;
     }
     .section h2 {
       text-align: center;
       margin-bottom: 40px;
     }
-    .services {
+    .features {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
       gap: 20px;
+      justify-content: center;
     }
-    .service {
+    .feature {
       background: white;
-      border-radius: 8px;
       padding: 20px;
+      border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       flex: 1;
       min-width: 250px;
+      max-width: 300px;
     }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 500px;
-      margin: auto;
+    .feature h3 {
+      color: #3a539b;
+      margin-bottom: 10px;
     }
-    .contact-form input, .contact-form textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    .join {
+      text-align: center;
+      margin-top: 40px;
     }
-    .contact-form button {
-      background: #004080;
+    .join a {
+      display: inline-block;
+      background: #7289da;
       color: white;
-      border: none;
-      padding: 10px;
+      padding: 12px 30px;
       border-radius: 5px;
-      cursor: pointer;
+      font-size: 1.1rem;
+      text-decoration: none;
     }
     footer {
-      background: #004080;
+      background: #2c3e50;
       color: white;
       text-align: center;
       padding: 20px;
@@ -98,69 +100,58 @@
 <body>
 
 <header>
-  <div><strong>MyWebsite</strong></div>
+  <div><strong>神日京国</strong></div>
   <nav>
-    <a href="#services">サービス</a>
-    <a href="#about">私たちについて</a>
-    <a href="#contact">お問い合わせ</a>
+    <a href="#about">紹介</a>
+    <a href="#features">特徴</a>
+    <a href="#join">参加</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>ようこそ、マイホームページへ</h1>
-  <p>ここではあなたのサービスや商品を紹介できます。</p>
-  <button onclick="scrollToContact()">お問い合わせ</button>
+  <h1>神日京国へようこそ</h1>
+  <p>個性豊かなメンバーと過ごす、にぎやかで楽しいDiscordサーバー</p>
+  <button onclick="scrollToJoin()">サーバーに参加する</button>
 </section>
 
-<section id="services" class="section">
-  <h2>サービス紹介</h2>
-  <div class="services">
-    <div class="service">
-      <h3>ウェブ制作</h3>
-      <p>モダンでレスポンシブなウェブサイトを作成します。</p>
+<section id="about" class="section">
+  <h2>神日京国とは？</h2>
+  <p style="text-align: center; max-width: 700px; margin: auto;">
+    神日京国は、雑談・趣味・交流を中心に活動するオープンなDiscordコミュニティです。  
+    初心者から常連まで、誰でも気軽に参加できるフレンドリーな空間です！
+  </p>
+</section>
+
+<section id="features" class="section">
+  <h2>サーバーの特徴</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>🛡️ 安心の管理体制</h3>
+      <p>経験豊富な管理チームが24時間体制でサポート。荒らし対策も万全！</p>
     </div>
-    <div class="service">
-      <h3>SEO対策</h3>
-      <p>検索エンジンに強いサイト設計を提供します。</p>
+    <div class="feature">
+      <h3>💬 アクティブな雑談</h3>
+      <p>毎日活発なチャットでにぎわっています。趣味トークも盛り上がる！</p>
     </div>
-    <div class="service">
-      <h3>運用サポート</h3>
-      <p>サイト公開後も安心の継続サポートを提供。</p>
+    <div class="feature">
+      <h3>🎉 定期イベント開催</h3>
+      <p>ゲーム大会やクイズ、語り場など楽しいイベントが盛りだくさん！</p>
     </div>
   </div>
 </section>
 
-<section id="about" class="section" style="background:#ffffff;">
-  <h2>私たちについて</h2>
-  <p style="max-width: 700px; margin: auto; text-align: center;">
-    私たちは中小企業や個人事業主向けに、丁寧で信頼性のあるウェブソリューションを提供しています。
-    クライアントの目標を第一に考え、長くお付き合いできるパートナーでありたいと願っています。
-  </p>
-</section>
-
-<section id="contact" class="section">
-  <h2>お問い合わせ</h2>
-  <form class="contact-form" onsubmit="handleSubmit(event)">
-    <input type="text" placeholder="お名前" required>
-    <input type="email" placeholder="メールアドレス" required>
-    <textarea rows="5" placeholder="お問い合わせ内容" required></textarea>
-    <button type="submit">送信</button>
-  </form>
+<section id="join" class="section join">
+  <h2>今すぐ参加しよう！</h2>
+  <a href="https://discord.gg/あなたの招待リンク" target="_blank">Discordに参加する</a>
 </section>
 
 <footer>
-  © 2025 MyWebsite. All rights reserved.
+  © 2025 神日京国. All Rights Reserved.
 </footer>
 
 <script>
-  function scrollToContact() {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    alert("お問い合わせありがとうございます。後ほどご連絡いたします。");
-    event.target.reset();
+  function scrollToJoin() {
+    document.getElementById('join').scrollIntoView({ behavior: 'smooth' });
   }
 </script>
 
