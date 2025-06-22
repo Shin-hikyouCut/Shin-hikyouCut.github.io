@@ -8,14 +8,13 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     body, html { height:100%; font-family:'Yu Gothic',sans-serif; display:flex; flex-direction:column; }
 
-    /* 全画面上部ビジュアル */
     .hero {
       background: url('2482ca0fe7e27fbb.webp') no-repeat center center;
       background-size: cover;
       height: 60vh;
       position: relative;
     }
-    /* ナビゲーションエリア */
+
     nav {
       position: absolute;
       top: 20px; left: 50%;
@@ -47,8 +46,11 @@
       padding: 30px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
-    main h2 { margin-bottom: 20px; color:#333; }
-    main p { margin-bottom: 16px; line-height:1.7; color:#555; }
+    section {
+      margin-bottom: 60px;
+    }
+    h2 { margin-bottom: 20px; color:#333; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
+    p { margin-bottom: 16px; line-height:1.7; color:#555; }
 
     footer {
       background: #222;
@@ -71,10 +73,30 @@
     <header>神日京国へようこそ</header>
   </div>
 
-  <main id="about">
-    <h2>サイトについて</h2>
-    <p></p>
-    <p></p>
+  <main>
+    <section id="about">
+      <h2>サイトについて</h2>
+      <p></p>
+      <p></p>
+    </section>
+
+    <section id="rooms">
+      <h2>国について</h2>
+      <p></p>
+      <p></p>
+    </section>
+
+    <section id="onsen">
+      <h2>サーバー</h2>
+      <p></p>
+      <p></p>
+    </section>
+
+    <section id="access">
+      <h2>各県</h2>
+      <p></p>
+      <p></p>
+    </section>
   </main>
 
   <footer>
