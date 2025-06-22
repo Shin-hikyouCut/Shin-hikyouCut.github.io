@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>神日京国</title>
   <style>
-    /* ===== リセット & ベース ===== */
     * {
       margin: 0;
       padding: 0;
@@ -20,6 +19,31 @@
     a {
       text-decoration: none;
       color: inherit;
+    }
+
+    /* アニメーション基礎 */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .slide-in {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: all 0.8s ease;
+    }
+
+    .slide-in.visible {
+      opacity: 1;
+      transform: translateX(0);
     }
 
     /* ===== ヒーローセクション ===== */
@@ -51,10 +75,11 @@
       color: #fff;
       font-weight: bold;
       font-size: 1rem;
-      transition: color 0.3s;
+      transition: transform 0.3s, color 0.3s;
     }
     .nav a:hover {
       color: #ffd700;
+      transform: scale(1.1);
     }
 
     .hero-title {
@@ -63,6 +88,9 @@
       text-align: center;
       text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
       margin-bottom: 40px;
+      animation: fadeInUp 1.2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
     }
 
     /* ===== メインコンテンツ ===== */
@@ -164,25 +192,26 @@
       <a href="#server">サーバー</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
+    <div class="hero-title">神日京国へようこそ</div>
   </div>
 
   <main>
-    <section id="about">
+    <section id="about" class="slide-in">
       <h2>神日京国とは</h2>
       <p>（ここに紹介文を入力）</p>
     </section>
 
-    <section id="regions">
+    <section id="regions" class="slide-in">
       <h2>各県</h2>
       <p>（ここに地域や組織情報を入力）</p>
     </section>
 
-    <section id="server">
+    <section id="server" class="slide-in">
       <h2>サーバー</h2>
       <p>（ここに技術環境やサポート情報などを入力）</p>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="slide-in">
       <h2>お問い合わせ</h2>
       <p>（ここに連絡方法やフォームへのリンクなどを記載）</p>
     </section>
@@ -191,6 +220,21 @@
   <footer>
     &copy; 2025 神日京国公式サイト
   </footer>
+
+  <script>
+    // スクロールで .slide-in に visible クラス追加
+    const slideEls = document.querySelectorAll('.slide-in');
+    const onScroll = () => {
+      slideEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', onScroll);
+    window.addEventListener('load', onScroll);
+  </script>
 
 </body>
 </html>
