@@ -5,54 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>神日京国HP</title>
   <style>
-    /* 背景画像と基本設定 */
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: sans-serif;
-      background-image: url('2482ca0fe7e27fbb.webp');
+      color: #333;
+    }
+
+    /* 上半分の背景画像 */
+    .top-background {
+      height: 50vh;
+      background-image: url('2482ca0fe7e27fbb.webp'); 
       background-size: cover;
       background-position: center;
-      color: #fff;
     }
 
     header {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 40px 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px;
       text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.5em;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4); 
     }
 
     main {
-      padding: 20px;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
       text-align: center;
-      background-color: rgba(0, 0, 0, 0.4);
-      margin: 40px auto;
-      max-width: 600px;
+      background-color: #f9f9f9;
       border-radius: 10px;
+      margin-top: -100px; /* 背景と少しかぶせる */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     footer {
+      background-color: #222;
+      color: #fff;
       text-align: center;
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.5);
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-size: 2.5em;
     }
   </style>
 </head>
 <body>
+
+  <!-- 背景画像の上半分エリア -->
+  <div class="top-background"></div>
+
+  <!-- ヘッダー -->
   <header>
-    <h1>ようこそ！</h1>
+    <h1>神日京国へようこそ！</h1>
   </header>
 
+  <!-- メインコンテンツ -->
   <main>
-    <p>神日京国HP。</p>
+    <p>こちらは神日京国の公式ホームページです。</p>
+    <p>最新情報や歴史などを紹介しています。</p>
   </main>
 
+  <!-- フッター -->
   <footer>
-    <p>&copy; 2025 神日京国</p>
+    <p>&copy; 2025 神日京国公式サイト</p>
   </footer>
+
 </body>
 </html>
