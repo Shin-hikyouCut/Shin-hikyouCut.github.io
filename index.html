@@ -1,56 +1,94 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>神日京国HP</title>
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body, html { height:100%; font-family:'Yu Gothic',sans-serif; display:flex; flex-direction:column; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      font-family: 'Yu Gothic', sans-serif;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
 
     .hero {
       background: url('2482ca0fe7e27fbb.webp') no-repeat center center;
       background-size: cover;
       height: 60vh;
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     nav {
-      position: absolute;
-      top: 20px; left: 50%;
-      transform: translateX(-50%);
       display: flex;
-      gap: 20px;
-      background: rgba(0,0,0,0.5);
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      background: rgba(0, 0, 0, 0.5);
       padding: 10px 20px;
       border-radius: 30px;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
     }
-    nav a { color: #fff; text-decoration: none; font-weight: bold; }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
 
     header {
       position: absolute;
-      bottom: 20px; left: 50%;
+      bottom: 20px;
+      left: 50%;
       transform: translateX(-50%);
       color: #fff;
-      text-shadow:0 2px 4px rgba(0,0,0,0.7);
-      font-size: 3em;
-      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+      font-size: 2.5em;
+      text-align: center;
+      padding: 0 10px;
     }
 
     main {
-      flex:1;
+      flex: 1;
       max-width: 900px;
       margin: -60px auto 40px;
       background: #fff;
       border-radius: 12px;
       padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
+
     section {
       margin-bottom: 60px;
     }
-    h2 { margin-bottom: 20px; color:#333; border-bottom: 2px solid #ccc; padding-bottom: 10px; }
-    p { margin-bottom: 16px; line-height:1.7; color:#555; }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    p {
+      margin-bottom: 16px;
+      line-height: 1.7;
+      color: #555;
+      font-size: 1rem;
+    }
 
     footer {
       background: #222;
@@ -58,6 +96,43 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
+    }
+
+    /* ====== モバイル対応 ====== */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      header {
+        font-size: 2em;
+        padding: 0 10px;
+      }
+
+      main {
+        margin: -40px 16px 40px;
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 1.3em;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        font-size: 1.6em;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
