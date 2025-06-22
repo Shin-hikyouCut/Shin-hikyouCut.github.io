@@ -265,7 +265,13 @@
     };
 
     window.addEventListener('scroll', onScroll);
-    window.addEventListener('load', onScroll);
+  window.addEventListener('load', () => {
+    // 遅延で実行しても初期スクロール位置が維持されない場合の対策
+    setTimeout(() => {
+      window.scrollTo(0, 0); // ← 最上部へ強制スクロール
+    }, 10);
+    onScroll();
+  });
   </script>
 
 </body>
