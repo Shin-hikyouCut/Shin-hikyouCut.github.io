@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>神日京国 - Discordサーバー公式サイト</title>
   <style>
-    body {
+  body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #f4f6fa;
@@ -26,33 +26,30 @@
     }
 
     .hero {
-      position: relative;
-      background: url('https://media.discordapp.net/attachments/1385647827224625325/1386339760603271229/39_20250622223803.png?ex=68595903&is=68580783&hm=d21558c30432cf68725b2cf972b542d07f8165f5f79bfaa45f06bc5554fc01e7&=&format=webp&quality=lossless&width=1382&height=778') center/cover no-repeat;
-      color: white;
-      padding: 100px 20px;
+      height: 50vh;
+      background: url('https://source.unsplash.com/1600x900/?japan,temple') center/cover no-repeat;
+      background-attachment: fixed;
+    }
+
+    .hero-text {
       text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to bottom, #ffffff, #f9f9f9);
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5); /* 黒い半透明オーバーレイ */
-      z-index: 1;
-    }
-    .hero h1, .hero p, .hero button {
-      position: relative;
-      z-index: 2;
-    }
-    .hero h1 {
+
+    .hero-text h1 {
       font-size: 2.8rem;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      color: #2c3e50;
     }
-    .hero p {
+
+    .hero-text p {
       font-size: 1.2rem;
       margin-bottom: 30px;
+      color: #444;
     }
-    .hero button {
+
+    .hero-text button {
       background: #f39c12;
       color: white;
       padding: 12px 24px;
@@ -67,16 +64,19 @@
       margin: auto;
       padding: 60px 20px;
     }
+
     .section h2 {
       text-align: center;
       margin-bottom: 40px;
     }
+
     .features {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
+
     .feature {
       background: white;
       padding: 20px;
@@ -86,14 +86,17 @@
       min-width: 250px;
       max-width: 300px;
     }
+
     .feature h3 {
       color: #3a539b;
       margin-bottom: 10px;
     }
+
     .join {
       text-align: center;
       margin-top: 40px;
     }
+
     .join a {
       display: inline-block;
       background: #7289da;
@@ -103,6 +106,7 @@
       font-size: 1.1rem;
       text-decoration: none;
     }
+
     footer {
       background: #2c3e50;
       color: white;
