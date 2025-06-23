@@ -133,17 +133,33 @@
   background: #5865F2;
   color: white;
   padding: 14px 35px;
-  font-size: 1.1rem;
-  border-radius: 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 10px;
   text-decoration: none;
-  transition: background 0.3s;
   display: inline-block;
-  animation: bounce 2s infinite;
+  animation: shakeBounce 1s infinite ease-in-out;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .join a:hover {
   background: #4752c4;
+  transform: scale(1.1);
 }
+
+/* アニメーション定義：より激しいバウンド＋揺れ */
+@keyframes shakeBounce {
+  0%   { transform: translateY(0) rotate(0deg); }
+  10%  { transform: translateY(-12px) rotate(-3deg); }
+  20%  { transform: translateY(8px) rotate(3deg); }
+  30%  { transform: translateY(-8px) rotate(-2deg); }
+  40%  { transform: translateY(6px) rotate(2deg); }
+  50%  { transform: translateY(-6px) rotate(-1deg); }
+  60%  { transform: translateY(4px) rotate(1deg); }
+  70%  { transform: translateY(-3px) rotate(0); }
+  100% { transform: translateY(0) rotate(0); }
+}
+
 
     footer {
       background: #2c3e50;
@@ -162,16 +178,6 @@
         flex-direction: column;
       }
     }
-
-    /* 追加：ふわふわバウンドするアニメーション */
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
   </style>
 </head>
 <body>
