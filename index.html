@@ -6,6 +6,7 @@
   <title>神日京国 - Discordサーバー</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
   <style>
+    /* 全体スタイル */
     body {
       margin: 0;
       font-family: 'Noto Sans JP', sans-serif;
@@ -13,6 +14,7 @@
       background-color: #f8f9fa;
     }
 
+    /* ヘッダー */
     header {
       background: #2c3e50;
       color: white;
@@ -32,6 +34,7 @@
       font-weight: bold;
     }
 
+    /* トップ画像 */
     .top-image {
       width: 100%;
       overflow: hidden;
@@ -46,6 +49,7 @@
       transition: transform 0.2s ease-out;
     }
 
+    /* ヒーローセクション */
     .hero-text {
       padding: 60px 20px;
       background: #fff;
@@ -78,6 +82,7 @@
       background: #cf711c;
     }
 
+    /* セクションアニメーション */
     .section {
       max-width: 1000px;
       margin: auto;
@@ -97,6 +102,7 @@
       margin-bottom: 40px;
     }
 
+    /* 特徴カード */
     .features {
       display: flex;
       flex-wrap: wrap;
@@ -124,42 +130,52 @@
       color: #3a539b;
     }
 
+    /* Discord参加ボタン */
     .join {
       text-align: center;
       margin-top: 40px;
     }
 
-.join a {
-  background: linear-gradient(135deg, #5865F2, #7289DA);
-  color: white;
-  padding: 16px 40px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 12px;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  animation: glow 2s infinite alternate;
-  box-shadow: 0 0 20px rgba(88, 101, 242, 0.6);
-  transition: transform 0.2s;
-}
+    .join a {
+      background: linear-gradient(135deg, #5865F2, #7289DA);
+      color: white;
+      padding: 16px 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      animation: glow 2s infinite alternate;
+      box-shadow: 0 0 20px rgba(88, 101, 242, 0.6);
+      transition: transform 0.2s;
+    }
 
-.join a:hover {
-  transform: scale(1.08);
-}
+    .join a:hover {
+      transform: scale(1.08);
+    }
 
-@keyframes glow {
-  from {
-    box-shadow: 0 0 10px rgba(88, 101, 242, 0.3), 0 0 20px rgba(114, 137, 218, 0.2);
-  }
-  to {
-    box-shadow: 0 0 25px rgba(88, 101, 242, 0.8), 0 0 40px rgba(114, 137, 218, 0.6);
-  }
-}
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px rgba(88, 101, 242, 0.3), 0 0 20px rgba(114, 137, 218, 0.2);
+      }
+      to {
+        box-shadow: 0 0 25px rgba(88, 101, 242, 0.8), 0 0 40px rgba(114, 137, 218, 0.6);
+      }
+    }
 
+    /* 爆発パーティクル */
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 10;
+    }
 
-
+    /* フッター */
     footer {
       background: #2c3e50;
       color: white;
@@ -168,6 +184,7 @@
       font-size: 0.9rem;
     }
 
+    /* レスポンシブ */
     @media (max-width: 600px) {
       .hero-text h1 {
         font-size: 2rem;
@@ -181,6 +198,7 @@
 </head>
 <body>
 
+  <!-- ヘッダー -->
   <header>
     <div><strong>神日京国</strong></div>
     <nav>
@@ -190,12 +208,12 @@
     </nav>
   </header>
 
-  <!-- 画像セクション（切れずに表示） -->
+  <!-- トップ画像（パララックス） -->
   <div class="top-image">
     <img src="https://cdn.discordapp.com/attachments/1385647827224625325/1386477074415616121/39_20250623074355.png?ex=6859d8e6&is=68588766&hm=32620aba1a053a184eab4156b5b0f55586160dbc220d0831264dc590880f30dd&" alt="神日京国のイメージ" id="parallax">
   </div>
 
-  <!-- メイン紹介 -->
+  <!-- ヒーローテキスト -->
   <section class="hero-text">
     <h1>神日京国へようこそ</h1>
     <p>雑談・趣味・ゲームなど、あなたの毎日が楽しくなるDiscordコミュニティ</p>
@@ -206,7 +224,7 @@
   <section id="about" class="section">
     <h2>神日京国とは？</h2>
     <p style="text-align: center; max-width: 700px; margin: auto;">
-      雑談からイベントまで、あらゆるユーザーが楽しく過ごせる場所。  
+      雑談からイベントまで、あらゆるユーザーが楽しく過ごせる場所。<br>
       活発なメンバーと、やさしい管理陣があなたを歓迎します。
     </p>
   </section>
@@ -230,7 +248,7 @@
     </div>
   </section>
 
-  <!-- 参加ボタン -->
+  <!-- 参加 -->
   <section id="join" class="section join">
     <h2>今すぐ参加しよう！</h2>
     <a href="https://discord.gg/あなたの招待リンク" target="_blank">Discordに参加する</a>
@@ -241,16 +259,16 @@
     © 2025 神日京国. All Rights Reserved.
   </footer>
 
-  <!-- JS: スクロール・アニメーション -->
+  <!-- JavaScript -->
   <script>
-    // パララックス（控えめ）
+    // パララックス効果
     window.addEventListener("scroll", () => {
       const img = document.getElementById("parallax");
       const offset = window.scrollY * 0.1;
       img.style.transform = `translateY(${offset}px)`;
     });
 
-    // スクロール表示アニメーション
+    // セクション表示アニメーション
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -262,54 +280,40 @@
     document.querySelectorAll('.section').forEach(section => {
       observer.observe(section);
     });
-  </script>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const button = document.querySelector(".join a");
+    // Discordボタン 爆発アニメーション
+    document.addEventListener("DOMContentLoaded", () => {
+      const button = document.querySelector(".join a");
 
-    button.addEventListener("click", (e) => {
-      const burstCount = 20;
+      button.addEventListener("click", (e) => {
+        const burstCount = 20;
 
-      for (let i = 0; i < burstCount; i++) {
-        const particle = document.createElement("span");
-        particle.classList.add("particle");
-        particle.style.left = e.offsetX + "px";
-        particle.style.top = e.offsetY + "px";
-        particle.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
+        for (let i = 0; i < burstCount; i++) {
+          const particle = document.createElement("span");
+          particle.classList.add("particle");
+          particle.style.left = e.offsetX + "px";
+          particle.style.top = e.offsetY + "px";
+          particle.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
 
-        button.appendChild(particle);
+          button.appendChild(particle);
 
-        const angle = Math.random() * 2 * Math.PI;
-        const radius = 80 + Math.random() * 40;
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
+          const angle = Math.random() * 2 * Math.PI;
+          const radius = 80 + Math.random() * 40;
+          const x = Math.cos(angle) * radius;
+          const y = Math.sin(angle) * radius;
 
-        particle.animate([
-          { transform: 'translate(0, 0)', opacity: 1 },
-          { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
-        ], {
-          duration: 600,
-          easing: 'ease-out'
-        });
+          particle.animate([
+            { transform: 'translate(0, 0)', opacity: 1 },
+            { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
+          ], {
+            duration: 600,
+            easing: 'ease-out'
+          });
 
-        setTimeout(() => particle.remove(), 600);
-      }
+          setTimeout(() => particle.remove(), 600);
+        }
+      });
     });
-  });
-</script>
-
-<style>
-  .particle {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10;
-  }
-</style>
-
-
+  </script>
 </body>
 </html>
