@@ -129,36 +129,35 @@
       margin-top: 40px;
     }
 
-    .join a {
-  background: #5865F2;
+.join a {
+  background: linear-gradient(135deg, #5865F2, #7289DA);
   color: white;
-  padding: 14px 35px;
+  padding: 16px 40px;
   font-size: 1.2rem;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
   display: inline-block;
-  animation: shakeBounce 1s infinite ease-in-out;
-  transition: background 0.3s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+  animation: glow 2s infinite alternate;
+  box-shadow: 0 0 20px rgba(88, 101, 242, 0.6);
+  transition: transform 0.2s;
 }
 
 .join a:hover {
-  background: #4752c4;
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
-/* アニメーション定義：より激しいバウンド＋揺れ */
-@keyframes shakeBounce {
-  0%   { transform: translateY(0) rotate(0deg); }
-  10%  { transform: translateY(-12px) rotate(-3deg); }
-  20%  { transform: translateY(8px) rotate(3deg); }
-  30%  { transform: translateY(-8px) rotate(-2deg); }
-  40%  { transform: translateY(6px) rotate(2deg); }
-  50%  { transform: translateY(-6px) rotate(-1deg); }
-  60%  { transform: translateY(4px) rotate(1deg); }
-  70%  { transform: translateY(-3px) rotate(0); }
-  100% { transform: translateY(0) rotate(0); }
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(88, 101, 242, 0.3), 0 0 20px rgba(114, 137, 218, 0.2);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(88, 101, 242, 0.8), 0 0 40px rgba(114, 137, 218, 0.6);
+  }
 }
+
 
 
     footer {
@@ -264,6 +263,53 @@
       observer.observe(section);
     });
   </script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const button = document.querySelector(".join a");
+
+    button.addEventListener("click", (e) => {
+      const burstCount = 20;
+
+      for (let i = 0; i < burstCount; i++) {
+        const particle = document.createElement("span");
+        particle.classList.add("particle");
+        particle.style.left = e.offsetX + "px";
+        particle.style.top = e.offsetY + "px";
+        particle.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
+
+        button.appendChild(particle);
+
+        const angle = Math.random() * 2 * Math.PI;
+        const radius = 80 + Math.random() * 40;
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+
+        particle.animate([
+          { transform: 'translate(0, 0)', opacity: 1 },
+          { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
+        ], {
+          duration: 600,
+          easing: 'ease-out'
+        });
+
+        setTimeout(() => particle.remove(), 600);
+      }
+    });
+  });
+</script>
+
+<style>
+  .particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+  }
+</style>
+
 
 </body>
 </html>
