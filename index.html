@@ -130,18 +130,20 @@
     }
 
     .join a {
-      background: #5865F2;
-      color: white;
-      padding: 14px 35px;
-      font-size: 1.1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
+  background: #5865F2;
+  color: white;
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
 
-    .join a:hover {
-      background: #4752c4;
-    }
+.join a:hover {
+  background: #4752c4;
+}
 
     footer {
       background: #2c3e50;
@@ -160,6 +162,16 @@
         flex-direction: column;
       }
     }
+
+    /* 追加：ふわふわバウンドするアニメーション */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
   </style>
 </head>
 <body>
