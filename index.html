@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>神日京国 - Discordサーバー</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
   <style>
@@ -10,7 +10,7 @@
       margin: 0;
       font-family: 'Noto Sans JP', sans-serif;
       scroll-behavior: smooth;
-      background-color: #f5f7fa;
+      background-color: #f8f9fa;
     }
 
     header {
@@ -32,25 +32,24 @@
       font-weight: bold;
     }
 
-    /* トップ画像（パララックス） */
     .top-image {
-      position: relative;
-      height: 70vh;
+      width: 100%;
       overflow: hidden;
     }
 
     .top-image img {
       width: 100%;
       height: auto;
-      object-fit: cover;
-      transform: translateY(0);
+      display: block;
+      object-fit: contain;
+      will-change: transform;
       transition: transform 0.2s ease-out;
     }
 
     .hero-text {
-      text-align: center;
       padding: 60px 20px;
       background: #fff;
+      text-align: center;
     }
 
     .hero-text h1 {
@@ -156,6 +155,7 @@
       .hero-text h1 {
         font-size: 2rem;
       }
+
       .features {
         flex-direction: column;
       }
@@ -164,86 +164,88 @@
 </head>
 <body>
 
-<header>
-  <div><strong>神日京国</strong></div>
-  <nav>
-    <a href="#about">紹介</a>
-    <a href="#features">特徴</a>
-    <a href="#join">参加</a>
-  </nav>
-</header>
+  <header>
+    <div><strong>神日京国</strong></div>
+    <nav>
+      <a href="#about">紹介</a>
+      <a href="#features">特徴</a>
+      <a href="#join">参加</a>
+    </nav>
+  </header>
 
-<!-- トップ画像 -->
-<div class="top-image">
-  <img src="https://cdn.discordapp.com/attachments/1385647827224625325/1386477074415616121/39_20250623074355.png?ex=6859d8e6&is=68588766&hm=32620aba1a053a184eab4156b5b0f55586160dbc220d0831264dc590880f30dd&" alt="神日京国のイメージ画像" id="parallax">
-</div>
-
-<!-- テキストセクション -->
-<section class="hero-text">
-  <h1>神日京国へようこそ</h1>
-  <p>雑談・趣味・ゲームなど、あなたの毎日が楽しくなるDiscordコミュニティ</p>
-  <button onclick="document.getElementById('join').scrollIntoView({ behavior: 'smooth' })">サーバーに参加</button>
-</section>
-
-<!-- 紹介 -->
-<section id="about" class="section">
-  <h2>神日京国とは？</h2>
-  <p style="text-align: center; max-width: 700px; margin: auto;">
-    雑談からイベントまで、あらゆるユーザーが楽しく過ごせる場所。  
-    活発なメンバーと、やさしい管理陣があなたを歓迎します。
-  </p>
-</section>
-
-<!-- 特徴 -->
-<section id="features" class="section">
-  <h2>サーバーの特徴</h2>
-  <div class="features">
-    <div class="feature">
-      <h3>🎤 声通話も活発</h3>
-      <p>深夜の雑談、ゲーム配信など音声チャンネルも充実！</p>
-    </div>
-    <div class="feature">
-      <h3>🎲 ミニゲームボット完備</h3>
-      <p>遊びながら仲良くなれる！人気Botも導入済み。</p>
-    </div>
-    <div class="feature">
-      <h3>🛡️ 安心の管理体制</h3>
-      <p>不正ユーザーや荒らしは即対処。新規さんにもやさしい。</p>
-    </div>
+  <!-- 画像セクション（切れずに表示） -->
+  <div class="top-image">
+    <img src="https://cdn.discordapp.com/attachments/1385647827224625325/1386477074415616121/39_20250623074355.png?ex=6859d8e6&is=68588766&hm=32620aba1a053a184eab4156b5b0f55586160dbc220d0831264dc590880f30dd&" alt="神日京国のイメージ" id="parallax">
   </div>
-</section>
 
-<!-- 参加 -->
-<section id="join" class="section join">
-  <h2>今すぐ参加しよう！</h2>
-  <a href="https://discord.gg/あなたの招待リンク" target="_blank">Discordに参加する</a>
-</section>
+  <!-- メイン紹介 -->
+  <section class="hero-text">
+    <h1>神日京国へようこそ</h1>
+    <p>雑談・趣味・ゲームなど、あなたの毎日が楽しくなるDiscordコミュニティ</p>
+    <button onclick="document.getElementById('join').scrollIntoView({ behavior: 'smooth' })">サーバーに参加</button>
+  </section>
 
-<!-- フッター -->
-<footer>
-  © 2025 神日京国. All Rights Reserved.
-</footer>
+  <!-- サーバー紹介 -->
+  <section id="about" class="section">
+    <h2>神日京国とは？</h2>
+    <p style="text-align: center; max-width: 700px; margin: auto;">
+      雑談からイベントまで、あらゆるユーザーが楽しく過ごせる場所。  
+      活発なメンバーと、やさしい管理陣があなたを歓迎します。
+    </p>
+  </section>
 
-<script>
-  // パララックス効果
-  window.addEventListener("scroll", () => {
-    const img = document.getElementById("parallax");
-    img.style.transform = `translateY(${window.scrollY * 0.3}px)`;
-  });
+  <!-- 特徴 -->
+  <section id="features" class="section">
+    <h2>サーバーの特徴</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>🎤 声通話も活発</h3>
+        <p>深夜の雑談、ゲーム配信など音声チャンネルも充実！</p>
+      </div>
+      <div class="feature">
+        <h3>🎲 ミニゲームボット完備</h3>
+        <p>遊びながら仲良くなれる！人気Botも導入済み。</p>
+      </div>
+      <div class="feature">
+        <h3>🛡️ 安心の管理体制</h3>
+        <p>不正ユーザーや荒らしは即対処。新規さんにもやさしい。</p>
+      </div>
+    </div>
+  </section>
 
-  // Intersection Observer アニメーション
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+  <!-- 参加ボタン -->
+  <section id="join" class="section join">
+    <h2>今すぐ参加しよう！</h2>
+    <a href="https://discord.gg/あなたの招待リンク" target="_blank">Discordに参加する</a>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    © 2025 神日京国. All Rights Reserved.
+  </footer>
+
+  <!-- JS: スクロール・アニメーション -->
+  <script>
+    // パララックス（控えめ）
+    window.addEventListener("scroll", () => {
+      const img = document.getElementById("parallax");
+      const offset = window.scrollY * 0.1;
+      img.style.transform = `translateY(${offset}px)`;
     });
-  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
-  });
-</script>
+    // スクロール表示アニメーション
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
