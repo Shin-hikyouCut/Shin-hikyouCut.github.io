@@ -156,7 +156,7 @@ header {
 }
 
 .mobile-menu {
-  display: none;
+  display: block;
   position: fixed;
   top: 0;
   right: -220px; /* 初期は隠す */
@@ -381,17 +381,6 @@ footer {
   <div class="hamburger" id="hamburger">
     <i class="fas fa-bars"></i>
   </div>
-  <!-- モバイルメニュー（スマホ表示） -->
-<nav class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
-    <li><a href="#culture"><i class="fas fa-landmark"></i> 文化</a></li>
-    <li><a href="#tourism"><i class="fas fa-map-marked-alt"></i> 観光</a></li>
-    <li><a href="#about">紹介</a></li>
-    <li><a href="#features">特徴</a></li>
-    <li><a href="#join">参加</a></li>
-  </ul>
-</nav>
 </header>
 
 
@@ -454,7 +443,7 @@ footer {
   window.addEventListener("scroll", () => {
     const img = document.getElementById("parallax");
     const offset = window.scrollY * 0.1;
-    img.style.transform = translateY(${offset}px);
+    img.style.transform = `translateY(${offset}px)`;
   });
 
   // セクションアニメーション
@@ -482,7 +471,7 @@ footer {
         particle.classList.add("particle");
         particle.style.left = e.offsetX + "px";
         particle.style.top = e.offsetY + "px";
-        particle.style.background = hsl(${Math.random() * 360}, 100%, 70%);
+        particle.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
 
         button.appendChild(particle);
 
@@ -493,7 +482,7 @@ footer {
 
         particle.animate([
           { transform: 'translate(0, 0)', opacity: 1 },
-          { transform: translate(${x}px, ${y}px), opacity: 0 }
+          { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
         ], {
           duration: 600,
           easing: 'ease-out'
@@ -542,3 +531,4 @@ footer {
 </script>
 </body>
 </html>
+このコードだと、スマホ画面では上のボタンが押せないので工夫を
