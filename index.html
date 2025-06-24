@@ -4,541 +4,345 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>神日京国 - Discordサーバー</title>
-  <!-- ✅ サイトの説明（SEO・OGP共通） -->
   <meta name="description" content="雑談・趣味・ゲームを楽しめるDiscordサーバー『神日京国』の公式ページ。誰でも参加歓迎！安全で活発なコミュニティへようこそ。">
-
-  <!-- ✅ OGP設定：SNSでの表示用 -->
   <meta property="og:title" content="神日京国 - Discordサーバー" />
-  <meta property="og:description" content="雑談・趣味・ゲームを楽しめるDiscordサーバー『神日京国』の公式ページ。誰でも参加歓迎！安全で活発なコミュニティへようこそ。" />
-  <meta property="og:image" content="https://cdn.discordapp.com/attachments/1385647827224625325/1386477074415616121/39_20250623074355.png" />
-  <meta property="og:url" content="https://あなたのサイトURL" />
+  <meta property="og:description" content="雑談・趣味・ゲームを楽しめるDiscordサーバー『神日京国』の公式ページ。" />
+  <meta property="og:image" content="https://cdn.discordapp.com/attachments/.../39_20250623074355.png" />
+  <meta property="og:url" content="https://your-real-site-url.com" />
   <meta property="og:type" content="website" />
-
-  <!-- ✅ Twitterカード対応 -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="神日京国 - Discordサーバー">
-  <meta name="twitter:description" content="雑談・趣味・ゲームを楽しめるDiscordサーバー『神日京国』の公式ページ。誰でも参加歓迎！安全で活発なコミュニティへようこそ。">
-  <meta name="twitter:image" content="https://cdn.discordapp.com/attachments/1385647827224625325/1386477074415616121/39_20250623074355.png">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    /* --- ベーススタイル --- */
     body {
-  margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
-  scroll-behavior: smooth;
-  background-color: #f8f9fa;
-}
+      margin: 0;
+      font-family: 'Noto Sans JP', sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    a { color: inherit; text-decoration: none; }
 
-/* Header Styles */
-header {
-  background: #1a1a1a;
-  color: #fff;
-  padding: 12px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
+    /* --- ヘッダー --- */
+    header {
+      background: #1a1a1a;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .logo i { color: #f39c12; }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+    .desktop-menu .nav-links {
+      display: flex;
+      gap: 16px;
+    }
+    .nav-links li { list-style: none; }
+    .nav-links a {
+      color: white;
+      font-weight: 500;
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #e67e22;
+      transition: width 0.3s;
+    }
+    .nav-links a:hover {
+      color: #f39c12;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-.logo i {
-  color: #f39c12;
-  font-size: 1.4rem;
-}
+    .hamburger {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: white;
+    }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
+    @media (max-width: 768px) {
+      .desktop-menu { display: none; }
+      .hamburger { display: block; }
+    }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s;
-}
+    /* --- モバイルメニュー --- */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      right: -250px;
+      width: 220px;
+      height: calc(100% - 60px);
+      background: #1a1a1a;
+      padding: 24px;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+      transition: right 0.3s ease;
+      z-index: 1001;
+    }
+    .mobile-menu.show { right: 0; }
+    .mobile-menu ul { padding: 0; margin: 0; }
+    .mobile-menu li { list-style: none; margin-bottom: 16px; }
+    .mobile-menu a { color: white; font-size: 1.1rem; display: block; }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: #e67e22;
-  transition: width 0.3s;
-}
+    /* --- トップ画像 --- */
+    .top-image img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      transform: scale(1.05);
+      opacity: 0;
+      transition: opacity 1s ease, transform 1.5s ease;
+    }
+    body.loaded .top-image img {
+      opacity: 1;
+      transform: scale(1);
+    }
 
-.nav-links a:hover {
-  color: #f39c12;
-}
+    /* --- セクション共通 --- */
+    .section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.nav-links a:hover::after {
-  width: 100%;
-}
+    /* --- ヒーローテキスト --- */
+    .hero-text {
+      padding: 60px 20px;
+      text-align: center;
+      background: #fff;
+    }
+    .hero-text h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .hero-text button {
+      background: #e67e22;
+      border: none;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+    .hero-text button:hover {
+      background: #cf711c;
+    }
 
-.nav-links li {
-  display: flex;
-  align-items: center;
-}
+    /* --- その他セクション --- */
+    .features { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .feature {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      flex: 1 1 250px;
+      transition: transform 0.3s;
+    }
+    .feature:hover { transform: translateY(-5px); }
+    .feature h3::before { content: "✨"; margin-right: 6px; animation: bounce 0.6s; }
+    @keyframes bounce { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
 
-.nav-links a i {
-  margin-right: 6px;
-}
+    .join { text-align: center; margin-top: 40px; }
+    .join a {
+      display: inline-block;
+      background: linear-gradient(135deg, #5865F2, #7289DA);
+      color: white;
+      padding: 16px 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      animation: glow 2s infinite alternate;
+      box-shadow: 0 0 20px rgba(88,101,242,0.6);
+      transition: transform 0.2s;
+    }
+    .join a:hover { transform: scale(1.08); }
+    @keyframes glow {
+      from { box-shadow: 0 0 10px rgba(88,101,242,0.3),0 0 20px rgba(114,137,218,0.2); }
+      to   { box-shadow: 0 0 25px rgba(88,101,242,0.8),0 0 40px rgba(114,137,218,0.6); }
+    }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-}
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
 
-.desktop-menu {
-  display: flex;
-}
-
-.mobile-menu {
-  display: none;
-}
-
-.hamburger {
-  display: none;
-}
-
-/* メディアクエリで切り替える（例） */
-@media screen and (max-width: 768px) {
-  .desktop-menu {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .mobile-menu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 999;
-  }
-
-  .mobile-menu.active {
-    display: block;
-  }
-}
-
-.hamburger {
-  display: none;
-  font-size: 1.6rem;
-  color: white;
-  cursor: pointer;
-  margin-left: auto;
-}
-
-.desktop-menu {
-  margin-left: auto; /* ← これで右端に寄せる */
-}
-
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: -220px; /* 初期は隠す */
-  background-color: #1a1a1a;
-  width: 220px;
-  height: 100%;
-  padding: 60px 20px;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-  z-index: 9999;
-  transition: right 0.3s ease;
-}
-
-.mobile-menu.show {
-  right: 0;
-}
-
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.mobile-menu li {
-  margin-bottom: 24px;
-}
-
-.mobile-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-  display: block;
-}
-
-/* Top Image Animation */
-.top-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  transform: scale(1.05);
-  opacity: 0;
-  transition: opacity 1s ease, transform 1.5s ease;
-}
-
-body.loaded .top-image img {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Hero Section */
-.hero-text {
-  padding: 60px 20px;
-  background: #fff;
-  text-align: center;
-}
-
-.hero-text h1 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.hero-text button {
-  background: #e67e22;
-  color: white;
-  padding: 14px 30px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.hero-text button:hover {
-  background: #cf711c;
-}
-
-/* Sections */
-.section {
-  max-width: 1000px;
-  margin: auto;
-  padding: 60px 20px;
-  opacity: 0;
-  transition: all 0.6s ease-out;
-}
-
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.section:nth-of-type(even) {
-  background: linear-gradient(to right, #fdfbfb, #ebedee);
-}
-
-/* Features */
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.feature {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-  flex: 1;
-  min-width: 250px;
-  max-width: 300px;
-  transition: transform 0.3s;
-}
-
-.feature:hover {
-  transform: translateY(-5px);
-}
-
-.feature:hover h3::before {
-  content: "✨";
-  display: inline-block;
-  margin-right: 8px;
-  animation: bounce 0.6s;
-}
-
-@keyframes bounce {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
-}
-
-/* Join Button */
-.join {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.join a {
-  background: linear-gradient(135deg, #5865F2, #7289DA);
-  color: white;
-  padding: 16px 40px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 12px;
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  animation: glow 2s infinite alternate;
-  box-shadow: 0 0 20px rgba(88, 101, 242, 0.6);
-  transition: transform 0.2s;
-}
-
-.join a:hover {
-  transform: scale(1.08);
-}
-
-@keyframes glow {
-  from {
-    box-shadow: 0 0 10px rgba(88, 101, 242, 0.3), 0 0 20px rgba(114, 137, 218, 0.2);
-  }
-  to {
-    box-shadow: 0 0 25px rgba(88, 101, 242, 0.8), 0 0 40px rgba(114, 137, 218, 0.6);
-  }
-}
-
-/* Particle Effects (Optional) */
-.particle {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* Footer */
-footer {
-  background: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .hero-text h1 {
-    font-size: 2rem;
-  }
-  .features {
-    flex-direction: column;
-  }
-}
+    @media (max-width: 600px) {
+      .hero-text h1 { font-size: 2rem; }
+      .features { flex-direction: column; }
+    }
   </style>
 </head>
+
 <body>
-
+  <!-- ヘッダー -->
   <header>
-  <div class="logo">
-    <i class="fas fa-mountain-sun"></i> 神日京国
-  </div>
+    <div class="logo"><i class="fas fa-mountain-sun"></i> 神日京国</div>
+    <nav class="desktop-menu">
+      <ul class="nav-links">
+        <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
+        <li><a href="#culture"><i class="fas fa-landmark"></i> 文化</a></li>
+        <li><a href="#tourism"><i class="fas fa-map-marked-alt"></i> 観光</a></li>
+        <li><a href="#about"><i class="fas fa-info-circle"></i> 紹介</a></li>
+        <li><a href="#features"><i class="fas fa-star"></i> 特徴</a></li>
+        <li><a href="#join"><i class="fas fa-door-open"></i> 参加</a></li>
+      </ul>
+    </nav>
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+  </header>
 
-  <!-- デスクトップメニュー -->
-  <nav class="desktop-menu">
-    <ul class="nav-links">
+  <!-- モバイルメニュー -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <ul>
       <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
       <li><a href="#culture"><i class="fas fa-landmark"></i> 文化</a></li>
       <li><a href="#tourism"><i class="fas fa-map-marked-alt"></i> 観光</a></li>
-      <li><a href="#about">紹介</a></li>
-      <li><a href="#features">特徴</a></li>
-      <li><a href="#join">参加</a></li>
+      <li><a href="#about"><i class="fas fa-info-circle"></i> 紹介</a></li>
+      <li><a href="#features"><i class="fas fa-star"></i> 特徴</a></li>
+      <li><a href="#join"><i class="fas fa-door-open"></i> 参加</a></li>
     </ul>
   </nav>
 
-  <!-- ハンバーガーメニュー（モバイル表示用） -->
-  <div class="hamburger" id="hamburger">
-    <i class="fas fa-bars"></i>
-  </div>
-  <!-- モバイルメニュー（スマホ表示） -->
-<nav class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
-    <li><a href="#culture"><i class="fas fa-landmark"></i> 文化</a></li>
-    <li><a href="#tourism"><i class="fas fa-map-marked-alt"></i> 観光</a></li>
-    <li><a href="#about">紹介</a></li>
-    <li><a href="#features">特徴</a></li>
-    <li><a href="#join">参加</a></li>
-  </ul>
-</nav>
-</header>
+  <!-- トップ画像 -->
+  <div class="top-image"><img src="https://cdn.discordapp.com/attachments/.../39_20250623074355.png" alt="宇宙背景" id="parallax"></div>
 
-
-
-  <div class="top-image">
-    <img src="https://media.discordapp.net/attachments/1385647827224625325/1386339760603271229/39_20250622223803.png?ex=685aaa83&is=68595903&hm=d480065747a9ee19e1ef0c9341e8571c62dc4bea8a850dcc4104ba55f1758513&=&format=webp&quality=lossless&width=1634&height=918" alt="神日京国のイメージ" id="parallax">
-  </div>
-
-  <section class="hero-text">
+  <!-- ヒーローメッセージ -->
+  <section class="hero-text section" id="intro">
     <h1>神日京国へようこそ</h1>
-    <p>雑談・趣味・ゲームなど、あなたの毎日が楽しくなるDiscordコミュニティ</p>
+    <p>雑談・趣味・文化活動を楽しめる、あなたの居場所。</p>
     <button onclick="document.getElementById('join').scrollIntoView({ behavior: 'smooth' })">サーバーに参加</button>
   </section>
 
-  <section id="about" class="section">
-    <h2>神日京国とは？</h2>
-    <p style="text-align: center; max-width: 700px; margin: auto;">
-      雑談からイベントまで、あらゆるユーザーが楽しく過ごせる場所。<br>
-      活発なメンバーと、やさしい管理陣があなたを歓迎します。
-    </p>
-    <p style="text-align: center; font-size: 1.1rem; margin-top: 20px;">
-      現在 <span class="count" data-count="358">0</span> 名が参加中！
-    </p>
+  <!-- 国紹介セクション -->
+  <section class="section" id="intro">
+    <h2>国紹介</h2>
+    <p>ここは架空国家「神日京国」。Discordを舞台に、国民投票や文化祭などを定期開催しています。</p>
   </section>
 
-  <section id="features" class="section">
-    <h2>サーバーの特徴</h2>
+  <!-- 文化セクション -->
+  <section class="section" id="culture">
+    <h2>文化</h2>
+    <p>古代神話や祭りをモチーフにした創作展開、ユーザー参加型の朗読会や美術展示などがあります。</p>
+  </section>
+
+  <!-- 観光セクション -->
+  <section class="section" id="tourism">
+    <h2>観光</h2>
+    <p>バーチャル観光ルートやオンライン名所ツアーを実施中。アバターで旅行気分を味わおう！</p>
+  </section>
+
+  <!-- 特徴セクション -->
+  <section class="section" id="features">
+    <h2>特徴</h2>
     <div class="features">
-      <div class="feature">
-        <h3>🎤 声通話も活発</h3>
-        <p>深夜の雑談、ゲーム配信など音声チャンネルも充実！</p>
-      </div>
-      <div class="feature">
-        <h3>🎲 ミニゲームボット完備</h3>
-        <p>遊びながら仲良くなれる！人気Botも導入済み。</p>
-      </div>
-      <div class="feature">
-        <h3>🛡️ 安心の管理体制</h3>
-        <p>不正ユーザーや荒らしは即対処。新規さんにもやさしい。</p>
-      </div>
+      <div class="feature"><h3>🎤 声通話も充実</h3><p>ゲーム配信や雑談、イベントも全力でサポート。</p></div>
+      <div class="feature"><h3>🎲 ミニゲームBot完備</h3><p>参加型ミニゲームや共同クリエイトを楽しもう。</p></div>
+      <div class="feature"><h3>🛡️ 安心の管理体制</h3><p>信頼できる運営とフレンドリーな雰囲気。</p></div>
     </div>
   </section>
 
-  <section id="join" class="section join">
-    <h2>今すぐ参加しよう！</h2>
-    <a href="https://discord.com/invite/haP3jjVWku" target="_blank">Discordに参加する</a>
+  <!-- 参加セクション -->
+  <section class="section join" id="join">
+    <h2>国民になる</h2>
+    <a href="https://discord.com/invite/haP3jjVWku" target="_blank" rel="noopener">Discordに参加</a>
+    <p style="margin-top:16px;">現在<span class="count" data-count="358">0</span>名が参加中！</p>
   </section>
 
   <footer>
     © 2025 神日京国. All Rights Reserved.
   </footer>
 
-<script>
-  // 読み込みアニメ
-  window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-  });
-
-  // パララックス効果
-  window.addEventListener("scroll", () => {
-    const img = document.getElementById("parallax");
-    const offset = window.scrollY * 0.1;
-    img.style.transform = `translateY(${offset}px)`;
-  });
-
-  // セクションアニメーション
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+  <!-- JavaScript -->
+  <script>
+    window.addEventListener("load", () => document.body.classList.add("loaded"));
+    window.addEventListener("scroll", () => {
+      document.getElementById("parallax").style.transform = `translateY(${window.scrollY * 0.1}px)`;
     });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
-  });
-
-  // 爆発アニメーション
-  document.addEventListener("DOMContentLoaded", () => {
-    const button = document.querySelector(".join a");
-
-    button.addEventListener("click", (e) => {
-      const burstCount = 20;
-
-      for (let i = 0; i < burstCount; i++) {
-        const particle = document.createElement("span");
-        particle.classList.add("particle");
-        particle.style.left = e.offsetX + "px";
-        particle.style.top = e.offsetY + "px";
-        particle.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
-
-        button.appendChild(particle);
-
-        const angle = Math.random() * 2 * Math.PI;
-        const radius = 80 + Math.random() * 40;
-        const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
-
-        particle.animate([
-          { transform: 'translate(0, 0)', opacity: 1 },
-          { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
-        ], {
-          duration: 600,
-          easing: 'ease-out'
+    // セクション表示アニメーション
+    new IntersectionObserver(entries => {
+      entries.forEach(e => e.isIntersecting && e.target.classList.add("visible"));
+    }, { threshold: 0.1 })
+      .observe(document.querySelectorAll(".section"), { silent: true });
+    // カウントアップ
+    document.querySelectorAll(".count").forEach(el =>
+      new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting && !el.classList.contains("done")) {
+            el.classList.add("done");
+            let tgt = +el.dataset.count, cnt = 0;
+            (function step() {
+              cnt += Math.ceil(tgt / 30);
+              el.textContent = cnt > tgt ? tgt : cnt;
+              if (cnt < tgt) requestAnimationFrame(step);
+            })();
+          }
         });
-
-        setTimeout(() => particle.remove(), 600);
+      }, { threshold: 1 }).observe(el)
+    );
+    // 爆発パーティクル効果
+    document.querySelector(".join a").addEventListener("click", (e) => {
+      for (let i = 0; i < 20; i++) {
+        const p = document.createElement("span");
+        p.classList.add("particle");
+        p.style.left = `${e.clientX}px`;
+        p.style.top = `${e.clientY}px`;
+        p.style.background = `hsl(${Math.random() * 360},100%,70%)`;
+        document.body.appendChild(p);
+        const angle = Math.random() * Math.PI * 2;
+        const dist = 80 + Math.random() * 40;
+        p.animate([
+          { transform: "translate(0,0)", opacity: 1 },
+          { transform: `translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist}px)`, opacity: 0 }
+        ], { duration:600, easing: "ease-out" });
+        setTimeout(() => p.remove(), 600);
       }
     });
-  });
-
-  // カウントアップ
-  const counters = document.querySelectorAll('.count');
-  const countObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = +el.getAttribute('data-count');
-        let start = 0;
-        const step = () => {
-          start += Math.ceil(target / 30);
-          if (start > target) start = target;
-          el.textContent = start;
-          if (start < target) requestAnimationFrame(step);
-        };
-        step();
-        countObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 1 });
-
-  counters.forEach(c => countObserver.observe(c));
-
-  // モバイルメニュー
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('show');
-  });
-
-  document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('show');
-    });
-  });
-</script>
+    // モバイルメニュー制御
+    const hum = document.getElementById("hamburger"),
+          mm = document.getElementById("mobileMenu");
+    hum.addEventListener("click", () => mm.classList.toggle("show"));
+    mm.querySelectorAll("a").forEach(a =>
+      a.addEventListener("click", () => mm.classList.remove("show"))
+    );
+  </script>
 </body>
 </html>
