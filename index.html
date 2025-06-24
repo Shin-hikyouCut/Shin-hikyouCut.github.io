@@ -354,7 +354,7 @@ header {
     window.addEventListener("scroll", () => {
       const img = document.getElementById("parallax");
       const offset = window.scrollY * 0.1;
-      img.style.transform = translateY(${offset}px);
+      img.style.transform = `translateY(${offset}px)`;
     });
 
     const observer = new IntersectionObserver(entries => {
@@ -379,7 +379,7 @@ header {
           particle.classList.add("particle");
           particle.style.left = e.offsetX + "px";
           particle.style.top = e.offsetY + "px";
-          particle.style.background = hsl(${Math.random() * 360}, 100%, 70%);
+          particle.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
           button.appendChild(particle);
           const angle = Math.random() * 2 * Math.PI;
           const radius = 80 + Math.random() * 40;
@@ -387,7 +387,7 @@ header {
           const y = Math.sin(angle) * radius;
           particle.animate([
             { transform: 'translate(0, 0)', opacity: 1 },
-            { transform: translate(${x}px, ${y}px), opacity: 0 }
+            { transform: `translate(${x}px, ${y}px)`, opacity: 0 }
           ], {
             duration: 600,
             easing: 'ease-out'
@@ -429,3 +429,4 @@ header {
   </script>
 </body>
 </html>
+下から上にスクロールしたとき、バナーの動きが変
