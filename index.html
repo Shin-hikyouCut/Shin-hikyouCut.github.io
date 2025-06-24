@@ -106,6 +106,43 @@ header {
   }
 }
 
+.desktop-menu {
+  display: flex;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* メディアクエリで切り替える（例） */
+@media screen and (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 999;
+  }
+
+  .mobile-menu.active {
+    display: block;
+  }
+}
+
 .hamburger {
   display: none;
   font-size: 1.6rem;
@@ -338,7 +375,7 @@ footer {
     <i class="fas fa-mountain-sun"></i> 神日京国
   </div>
 
-  <!-- 1つの nav に統合 -->
+  <!-- デスクトップメニュー -->
   <nav class="desktop-menu">
     <ul class="nav-links">
       <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
@@ -350,10 +387,12 @@ footer {
     </ul>
   </nav>
 
+  <!-- ハンバーガーメニュー（モバイル表示用） -->
   <div class="hamburger" id="hamburger">
     <i class="fas fa-bars"></i>
   </div>
 
+  <!-- モバイルメニュー -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
@@ -365,6 +404,7 @@ footer {
     </ul>
   </div>
 </header>
+
 
 
   <div class="top-image">
