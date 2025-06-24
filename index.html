@@ -91,6 +91,15 @@ header {
   width: 100%;
 }
 
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a i {
+  margin-right: 6px;
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -271,6 +280,11 @@ footer {
   <div class="logo">
     <i class="fas fa-mountain-sun"></i> 神日京国
   </div>
+  <ul class="nav-links">
+    <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
+    <li><a href="#culture"><i class="fas fa-landmark"></i> 文化</a></li>
+    <li><a href="#tourism"><i class="fas fa-map-marked-alt"></i> 観光</a></li>
+  </ul>  
   <nav>
     <ul class="nav-links">
       <li><a href="#about">紹介</a></li>
