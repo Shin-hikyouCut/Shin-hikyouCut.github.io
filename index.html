@@ -114,6 +114,10 @@ header {
   margin-left: auto;
 }
 
+.desktop-menu {
+  margin-left: auto; /* ← これで右端に寄せる */
+}
+
 .mobile-menu {
   display: block;
   position: fixed;
@@ -333,11 +337,16 @@ footer {
   <div class="logo">
     <i class="fas fa-mountain-sun"></i> 神日京国
   </div>
+
+  <!-- 1つの nav に統合 -->
   <nav class="desktop-menu">
     <ul class="nav-links">
       <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
       <li><a href="#culture"><i class="fas fa-landmark"></i> 文化</a></li>
       <li><a href="#tourism"><i class="fas fa-map-marked-alt"></i> 観光</a></li>
+      <li><a href="#about">紹介</a></li>
+      <li><a href="#features">特徴</a></li>
+      <li><a href="#join">参加</a></li>
     </ul>
   </nav>
 
@@ -350,16 +359,13 @@ footer {
       <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
       <li><a href="#culture"><i class="fas fa-landmark"></i> 文化</a></li>
       <li><a href="#tourism"><i class="fas fa-map-marked-alt"></i> 観光</a></li>
-    </ul>
-  </div>
-  <nav>
-    <ul class="nav-links">
       <li><a href="#about">紹介</a></li>
       <li><a href="#features">特徴</a></li>
       <li><a href="#join">参加</a></li>
     </ul>
-  </nav>
+  </div>
 </header>
+
 
   <div class="top-image">
     <img src="https://media.discordapp.net/attachments/1385647827224625325/1386339760603271229/39_20250622223803.png?ex=685aaa83&is=68595903&hm=d480065747a9ee19e1ef0c9341e8571c62dc4bea8a850dcc4104ba55f1758513&=&format=webp&quality=lossless&width=1634&height=918" alt="神日京国のイメージ" id="parallax">
