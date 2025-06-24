@@ -106,6 +106,57 @@ header {
   }
 }
 
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  background-color: #1a1a1a;
+  width: 200px;
+  padding: 20px;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  margin-bottom: 20px;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-menu.show {
+    display: block;
+  }
+}
+
+
 /* Top Image Animation */
 .top-image img {
   width: 100%;
@@ -280,11 +331,25 @@ footer {
   <div class="logo">
     <i class="fas fa-mountain-sun"></i> 神日京国
   </div>
-  <ul class="nav-links">
-    <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
-    <li><a href="#culture"><i class="fas fa-landmark"></i> 文化</a></li>
-    <li><a href="#tourism"><i class="fas fa-map-marked-alt"></i> 観光</a></li>
-  </ul>  
+  <nav class="desktop-menu">
+    <ul class="nav-links">
+      <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
+      <li><a href="#culture"><i class="fas fa-landmark"></i> 文化</a></li>
+      <li><a href="#tourism"><i class="fas fa-map-marked-alt"></i> 観光</a></li>
+    </ul>
+  </nav>
+
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#intro"><i class="fas fa-flag"></i> 国紹介</a></li>
+      <li><a href="#culture"><i class="fas fa-landmark"></i> 文化</a></li>
+      <li><a href="#tourism"><i class="fas fa-map-marked-alt"></i> 観光</a></li>
+    </ul>
+  </div>
   <nav>
     <ul class="nav-links">
       <li><a href="#about">紹介</a></li>
@@ -423,6 +488,20 @@ footer {
     }, { threshold: 1 });
 
     counters.forEach(c => countObserver.observe(c));
+
+    const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('show');
+  });
+
+  // モバイルメニュー内リンクをクリックしたら自動で閉じる
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('show');
+    });
+  });
   </script>
 </body>
 </html>
