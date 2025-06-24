@@ -1,43 +1,50 @@
 ---
 layout: default
 title: ページが見つかりません (404)
-permalink: /404.html
+permalink: /404
 ---
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - ページが見つかりません</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            text-align: center;
-            padding: 50px;
-            color: #333;
-        }
-        h1 {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <h1>404</h1>
-    <p>お探しのページは見つかりませんでした。</p>
-    <p>入力されたURLが正しいかご確認ください。</p>
-    <p><a href="{{ site.baseurl }}/">ホームに戻る</a></p>
-</body>
-</html>
+<style type="text/css">
+    /* ここを調整してください */
+    /* 例えば、サイトタイトルを囲む要素のクラスが 'site-header' の場合 */
+    .site-header {
+        display: none;
+    }
+    /* または、サイトタイトルそのもののクラスが 'site-title' の場合 */
+    .site-title {
+        display: none;
+    }
+    /* あるいは、もっと広範囲に影響するが、404ページに不要なナビゲーションなども含めて非表示にする */
+    /* 例: body内の特定要素を非表示にする */
+    .wrapper > header { /* Minimaテーマの場合のヘッダー */
+        display: none;
+    }
+    .wrapper > footer { /* フッターも非表示にしたい場合 */
+        display: none;
+    }
+
+    /* 404ページ自体のスタイルはそのまま維持 */
+    .container {
+        margin: 10px auto;
+        max-width: 600px;
+        text-align: center;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    h1 {
+        margin: 30px 0;
+        font-size: 4em;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+    p {
+        margin: 1em 0;
+        font-size: 1.2em;
+        color: #777;
+    }
+</style>
+
+<div class="container">
+  <h1>404</h1>
+  <p><strong>お探しのページは見つかりませんでした。</strong></p>
+  <p>入力されたURLが正しいかご確認ください。<br><a href="{{ site.baseurl }}/">ホームに戻る</a></p>
+</div>
