@@ -133,33 +133,44 @@
       </ul>
     </nav>
   </header>
-  <section id="politicians" style="padding: 2rem; background-color: #fff;">
-  <h2 style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">政治家紹介</h2>
+  <section id="politicians" style="padding: 3rem 1rem; background-color: #ffffff;">
+  <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: #001f3f;">政治家紹介</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-    
-    <!-- 政治家1 -->
-    <div style="background-color: #f1f1f1; border-radius: 12px; padding: 1rem; width: 250px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <img src="画像URL1" alt="政治家1の顔写真" style="width: 100%; border-radius: 8px;">
-      <h3 style="margin-top: 1rem;">山田 太郎</h3>
-      <p>外交部門</p>
+
+    <!-- 政治家カード -->
+    <div style="background: linear-gradient(to bottom, #ffffff, #f4f6f8); border-radius: 16px; padding: 1.5rem; width: 260px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+      <img src="https://via.placeholder.com/250x250.png?text=山田+太郎" alt="山田 太郎" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+      <h3 style="margin: 0.5rem 0; font-size: 1.4rem; color: #333;">山田 太郎</h3>
+      <span style="display: inline-block; background-color: #0074D9; color: white; padding: 0.3rem 0.7rem; border-radius: 9999px; font-size: 0.9rem;">外交部門</span>
     </div>
 
-    <!-- 政治家2 -->
-    <div style="background-color: #f1f1f1; border-radius: 12px; padding: 1rem; width: 250px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <img src="画像URL2" alt="政治家2の顔写真" style="width: 100%; border-radius: 8px;">
-      <h3 style="margin-top: 1rem;">佐藤 花子</h3>
-      <p>内政部門</p>
+    <div style="background: linear-gradient(to bottom, #ffffff, #f4f6f8); border-radius: 16px; padding: 1.5rem; width: 260px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+      <img src="https://via.placeholder.com/250x250.png?text=佐藤+花子" alt="佐藤 花子" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+      <h3 style="margin: 0.5rem 0; font-size: 1.4rem; color: #333;">佐藤 花子</h3>
+      <span style="display: inline-block; background-color: #2ECC40; color: white; padding: 0.3rem 0.7rem; border-radius: 9999px; font-size: 0.9rem;">内政部門</span>
     </div>
 
-    <!-- 政治家3 -->
-    <div style="background-color: #f1f1f1; border-radius: 12px; padding: 1rem; width: 250px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <img src="画像URL3" alt="政治家3の顔写真" style="width: 100%; border-radius: 8px;">
-      <h3 style="margin-top: 1rem;">鈴木 一郎</h3>
-      <p>財務部門</p>
+    <div style="background: linear-gradient(to bottom, #ffffff, #f4f6f8); border-radius: 16px; padding: 1.5rem; width: 260px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
+      <img src="https://via.placeholder.com/250x250.png?text=鈴木+一郎" alt="鈴木 一郎" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+      <h3 style="margin: 0.5rem 0; font-size: 1.4rem; color: #333;">鈴木 一郎</h3>
+      <span style="display: inline-block; background-color: #FF851B; color: white; padding: 0.3rem 0.7rem; border-radius: 9999px; font-size: 0.9rem;">財務部門</span>
     </div>
 
   </div>
 </section>
+
+<!-- カードホバー効果の追加CSS -->
+<style>
+  #politicians div[style*="box-shadow"] {
+    cursor: pointer;
+  }
+
+  #politicians div[style*="box-shadow"]:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
