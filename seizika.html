@@ -133,43 +133,123 @@
       </ul>
     </nav>
   </header>
-  <section id="politicians" style="padding: 3rem 1rem; background-color: #ffffff;">
+  <section id="politicians" style="padding: 3rem 1rem; background-color: #fff;">
   <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: #001f3f;">政治家紹介</h2>
   <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
 
-    <!-- 政治家カード -->
-    <div style="background: linear-gradient(to bottom, #ffffff, #f4f6f8); border-radius: 16px; padding: 1.5rem; width: 260px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
-      <img src="https://via.placeholder.com/250x250.png?text=山田+太郎" alt="山田 太郎" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
-      <h3 style="margin: 0.5rem 0; font-size: 1.4rem; color: #333;">山田 太郎</h3>
-      <span style="display: inline-block; background-color: #0074D9; color: white; padding: 0.3rem 0.7rem; border-radius: 9999px; font-size: 0.9rem;">外交部門</span>
+    <!-- テンプレ：カード -->
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=内閣総理大臣" alt="内閣総理大臣">
+      <h3>内閣総理大臣</h3>
+      <span class="badge" style="background-color:#001f3f;"><i class="fas fa-crown"></i> 総理大臣</span>
     </div>
 
-    <div style="background: linear-gradient(to bottom, #ffffff, #f4f6f8); border-radius: 16px; padding: 1.5rem; width: 260px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
-      <img src="https://via.placeholder.com/250x250.png?text=佐藤+花子" alt="佐藤 花子" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
-      <h3 style="margin: 0.5rem 0; font-size: 1.4rem; color: #333;">佐藤 花子</h3>
-      <span style="display: inline-block; background-color: #2ECC40; color: white; padding: 0.3rem 0.7rem; border-radius: 9999px; font-size: 0.9rem;">内政部門</span>
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=文部科学省" alt="文部科学省">
+      <h3>文部科学省</h3>
+      <span class="badge" style="background-color:#0074D9;"><i class="fas fa-book"></i> 教育・文化</span>
     </div>
 
-    <div style="background: linear-gradient(to bottom, #ffffff, #f4f6f8); border-radius: 16px; padding: 1.5rem; width: 260px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;">
-      <img src="https://via.placeholder.com/250x250.png?text=鈴木+一郎" alt="鈴木 一郎" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
-      <h3 style="margin: 0.5rem 0; font-size: 1.4rem; color: #333;">鈴木 一郎</h3>
-      <span style="display: inline-block; background-color: #FF851B; color: white; padding: 0.3rem 0.7rem; border-radius: 9999px; font-size: 0.9rem;">財務部門</span>
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=財務省" alt="財務省">
+      <h3>財務省</h3>
+      <span class="badge" style="background-color:#FF4136;"><i class="fas fa-coins"></i> 財政管理</span>
+    </div>
+
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=国土交通省" alt="国土交通省">
+      <h3>国土交通省</h3>
+      <span class="badge" style="background-color:#2ECC40;"><i class="fas fa-road"></i> インフラ</span>
+    </div>
+
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=防衛省" alt="防衛省">
+      <h3>防衛省</h3>
+      <span class="badge" style="background-color:#85144b;"><i class="fas fa-shield-alt"></i> 防衛</span>
+    </div>
+
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=経済産業省" alt="経済産業省">
+      <h3>経済産業省</h3>
+      <span class="badge" style="background-color:#FF851B;"><i class="fas fa-industry"></i> 産業・経済</span>
+    </div>
+
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=宮内庁" alt="宮内庁">
+      <h3>宮内庁</h3>
+      <span class="badge" style="background-color:#B10DC9;"><i class="fas fa-university"></i> 皇室</span>
+    </div>
+
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=気象庁" alt="気象庁">
+      <h3>気象庁</h3>
+      <span class="badge" style="background-color:#7FDBFF;"><i class="fas fa-cloud-sun-rain"></i> 天気</span>
+    </div>
+
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=サイバー庁" alt="サイバー庁">
+      <h3>サイバー庁</h3>
+      <span class="badge" style="background-color:#111111;"><i class="fas fa-microchip"></i> IT・セキュリティ</span>
+    </div>
+
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=スポーツ庁" alt="スポーツ庁">
+      <h3>スポーツ庁</h3>
+      <span class="badge" style="background-color:#FFDC00;"><i class="fas fa-running"></i> スポーツ振興</span>
+    </div>
+
+    <div class="politician-card">
+      <img src="https://via.placeholder.com/250x250.png?text=鉄道庁" alt="鉄道庁">
+      <h3>鉄道庁</h3>
+      <span class="badge" style="background-color:#AAAAAA;"><i class="fas fa-train"></i> 交通機関</span>
     </div>
 
   </div>
 </section>
 
-<!-- カードホバー効果の追加CSS -->
+<!-- カードデザインCSS -->
 <style>
-  #politicians div[style*="box-shadow"] {
-    cursor: pointer;
+  .politician-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
   }
 
-  #politicians div[style*="box-shadow"]:hover {
+  .politician-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
   }
+
+  .politician-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .politician-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.3rem;
+    color: #333;
+  }
+
+  .badge {
+    display: inline-block;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .badge i {
+    margin-right: 6px;
+  }
 </style>
+
 
 
   <script>
